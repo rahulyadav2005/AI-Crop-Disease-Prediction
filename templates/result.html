@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+Prediction Result
+
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="card shadow p-4">
+
+        <h2 class="text-success">
+
+            Prediction Result
+
+        </h2>
+
+        <hr>
+
+        <img
+        src="{{ url_for('static', filename='uploads/original/' + image_name) }}"
+        class="img-fluid rounded"
+        width="350">
+
+        <h3 class="mt-4">
+
+            Disease :
+            {{ disease }}
+
+        </h3>
+
+        <h4>
+
+            Confidence :
+            {{ confidence }}
+
+        </h4>
+
+        <a
+        href="/"
+        class="btn btn-success mt-3">
+
+            Predict Another
+
+        </a>
+
+    </div>
+
+</div>
+
+{% endblock %}

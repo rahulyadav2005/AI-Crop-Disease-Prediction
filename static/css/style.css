@@ -1,12 +1,8 @@
-/* ===============================
-   GOOGLE FONT
-================================== */
+/* ===========================
+   Google Font
+=========================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
-
-/* ===============================
-   GLOBAL
-================================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 *{
     margin:0;
@@ -15,287 +11,173 @@
     font-family:'Poppins',sans-serif;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
 
-    background:#f5fff8;
+    background:linear-gradient(135deg,#1abc9c,#2ecc71);
 
-    color:#333;
+    min-height:100vh;
 
-}
+    display:flex;
 
-/* ===============================
-   NAVBAR
-================================== */
+    flex-direction:column;
 
-.navbar{
+    align-items:center;
 
-    background:#198754 !important;
+    justify-content:center;
 
 }
 
-.navbar-brand{
+/* ===========================
+   Header
+=========================== */
 
-    font-size:28px;
+header{
 
-    font-weight:bold;
-
-}
-
-.nav-link{
-
-    color:white !important;
-
-    font-weight:500;
-
-    margin-left:15px;
-
-}
-
-.nav-link:hover{
-
-    color:#ffd43b !important;
-
-}
-
-/* ===============================
-   HERO SECTION
-================================== */
-
-.hero-section{
-
-    padding:90px 0;
-
-}
-
-.hero-title{
-
-    font-size:55px;
-
-    font-weight:700;
-
-    color:#198754;
-
-}
-
-.hero-text{
-
-    margin-top:20px;
-
-    font-size:20px;
-
-    line-height:35px;
-
-}
-
-.hero-image{
-
-    width:90%;
-
-    animation:float 4s infinite;
-
-}
-
-/* ===============================
-   BUTTON
-================================== */
-
-.btn-success{
-
-    padding:12px 30px;
-
-    border-radius:50px;
-
-}
-
-.btn-outline-success{
-
-    padding:12px 30px;
-
-    border-radius:50px;
-
-}
-
-/* ===============================
-   ANIMATION
-================================== */
-
-@keyframes float{
-
-    0%{
-
-        transform:translateY(0);
-
-    }
-
-    50%{
-
-        transform:translateY(-15px);
-
-    }
-
-    100%{
-
-        transform:translateY(0);
-
-    }
-
-}
-
-/* ======================================
-UPLOAD CARD
-====================================== */
-
-.upload-card{
-
-    border:none;
-
-    border-radius:20px;
-
-    padding:30px;
-
-    background:white;
-
-    transition:.4s;
-
-}
-
-.upload-card:hover{
-
-    transform:translateY(-8px);
-
-    box-shadow:0 20px 40px rgba(0,0,0,.15);
-
-}
-
-
-/* ======================================
-FEATURE CARD
-====================================== */
-
-.feature-card{
-
-    border:none;
-
-    border-radius:20px;
-
-    padding:20px;
-
-    transition:.4s;
-
-    cursor:pointer;
-
-}
-
-.feature-card:hover{
-
-    transform:translateY(-10px);
-
-}
-
-.feature-card h1{
-
-    font-size:60px;
-
-}
-
-.feature-card p{
-
-    color:#666;
-
-}
-
-
-/* ======================================
-ABOUT CARD
-====================================== */
-
-.card{
-
-    border-radius:20px;
-
-}
-
-
-/* ======================================
-FOOTER
-====================================== */
-
-footer{
-
-    background:#198754;
+    text-align:center;
 
     color:white;
 
-    margin-top:100px;
+    margin-bottom:40px;
 
 }
 
+header h1{
 
-/* ======================================
-IMAGE PREVIEW
-====================================== */
+    font-size:42px;
 
-#preview{
+    margin-bottom:10px;
+
+}
+
+header p{
+
+    font-size:18px;
+
+}
+
+/* ===========================
+   Main Card
+=========================== */
+
+.container{
+
+    width:500px;
+
+    background:white;
+
+    padding:40px;
 
     border-radius:20px;
 
-    margin-top:20px;
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
 
 }
 
+/* ===========================
+   Upload Box
+=========================== */
 
-/* ======================================
-RESPONSIVE
-====================================== */
+.upload-box{
 
-@media(max-width:992px){
+    border:3px dashed #2ecc71;
 
-.hero-title{
+    padding:50px;
 
-font-size:40px;
+    text-align:center;
 
-text-align:center;
+    border-radius:15px;
 
-}
+    cursor:pointer;
 
-.hero-text{
-
-text-align:center;
-
-}
-
-.hero-image{
-
-margin-top:40px;
+    transition:.3s;
 
 }
 
-.hero-section{
+.upload-box:hover{
 
-text-align:center;
-
-}
+    background:#f4fff8;
 
 }
 
+.upload-box input{
 
-@media(max-width:576px){
-
-.hero-title{
-
-font-size:32px;
+    display:none;
 
 }
 
-.hero-text{
+.upload-box label{
 
-font-size:18px;
+    cursor:pointer;
 
-line-height:30px;
+    font-size:20px;
+
+    color:#2c3e50;
+
+}
+
+/* ===========================
+   Button
+=========================== */
+
+button{
+
+    width:100%;
+
+    margin-top:30px;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#27ae60;
+
+    color:white;
+
+    font-size:18px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#219150;
+
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+footer{
+
+    margin-top:30px;
+
+    color:white;
+
+    font-size:15px;
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:600px){
+
+.container{
+
+    width:90%;
+
+}
+
+header h1{
+
+    font-size:32px;
 
 }
 

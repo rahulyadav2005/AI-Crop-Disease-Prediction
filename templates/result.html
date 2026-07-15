@@ -1,49 +1,80 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block title %}
+<head>
 
-Prediction Result
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-{% endblock %}
+    <title>Prediction Result</title>
 
-{% block content %}
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>🌿 AI Crop Disease Prediction</h1>
+
+    <p>Prediction Result</p>
+
+</header>
 
 <div class="container">
 
-    <div class="card shadow p-4">
+    <h2 style="text-align:center;margin-bottom:20px;">
+        Prediction Completed
+    </h2>
 
-        <h2 class="text-success">
+    <img src="{{ image_path }}"
+         alt="Uploaded Image"
+         style="width:250px;
+                display:block;
+                margin:auto;
+                border-radius:10px;">
 
-            Prediction Result
+    <hr style="margin:25px 0;">
 
-        </h2>
+    <h3>🌱 Disease Name</h3>
 
-        <hr>
+    <p>{{ disease }}</p>
 
-        <img
-        src="{{ url_for('static', filename='uploads/original/' + image_name) }}"
-        class="img-fluid rounded"
-        width="350">
+    <br>
 
-        <h3 class="mt-4">
+    <h3>📊 Confidence</h3>
 
-            Disease :
-            {{ disease }}
+    <p>{{ confidence }} %</p>
 
-        </h3>
+    <br>
 
-        <h4>
+    <h3>💊 Treatment</h3>
 
-            Confidence :
-            {{ confidence }}
+    <p>{{ treatment }}</p>
 
-        </h4>
+    <br>
 
-        <a
-        href="/"
-        class="btn btn-success mt-3">
+    <h3>🛡 Prevention</h3>
 
-            Predict Another
+    <p>{{ prevention }}</p>
+
+    <br>
+
+    <h3>🌿 Fertilizer Recommendation</h3>
+
+    <p>{{ fertilizer }}</p>
+
+    <br>
+
+    <div style="text-align:center;">
+
+        <a href="/">
+
+            <button>
+                Predict Another Image
+            </button>
 
         </a>
 
@@ -51,4 +82,12 @@ Prediction Result
 
 </div>
 
-{% endblock %}
+<footer>
+
+    © 2026 AI Crop Disease Prediction
+
+</footer>
+
+</body>
+
+</html>

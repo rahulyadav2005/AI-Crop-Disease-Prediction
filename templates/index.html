@@ -1,212 +1,64 @@
-{% extends "base.html" %}
+<!DOCTYPE html>
+<html lang="en">
 
-{% block title %}Home{% endblock %}
+<head>
 
-{% block content %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Hero Section -->
+    <title>AI Crop Disease Prediction</title>
 
-<section class="hero-section">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 
-    <div class="container">
+</head>
 
-        <div class="row align-items-center">
+<body>
 
-            <div class="col-lg-6">
+    <header>
 
-                <h1 class="hero-title">
+        <h1>🌿 AI Crop Disease Prediction</h1>
 
-                    🌿 AI Crop Disease Prediction
+        <p>Upload a crop leaf image and detect disease using Artificial Intelligence.</p>
 
-                </h1>
-
-                <p class="hero-text">
-
-                    Detect plant diseases instantly using Artificial Intelligence,
-                    Computer Vision and Deep Learning.
-
-                </p>
-
-                <div class="mt-4">
-
-                    <a href="#" class="btn btn-success btn-lg me-3">
-
-                        Predict Now
-
-                    </a>
-
-                    <a href="#features" class="btn btn-outline-success btn-lg">
-
-                        Learn More
-
-                    </a>
-
-                </div>
-
-            </div>
-
-            <div class="col-lg-6 text-center">
-
-                <img src="{{ url_for('static', filename='images/plant.png') }}"
-                     class="img-fluid hero-image"
-                     alt="Plant">
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-<!-- Upload Section -->
-
-<form
-action="/predict"
-method="POST"
-enctype="multipart/form-data">
-
-<input
-type="file"
-name="image"
-id="imageInput"
-class="form-control"
-required>
-
-<img
-id="preview"
-style="display:none;max-height:300px;"
-class="img-fluid mt-4">
-
-<button
-class="btn btn-success btn-lg mt-4">
-
-Predict Disease
-
-</button>
-
-</form>
-
-<!-- Features -->
-
-<section id="features" class="mt-5">
+    </header>
 
     <div class="container">
 
-        <div class="text-center mb-5">
+        <form action="/predict" method="POST" enctype="multipart/form-data">
 
-            <h2>
+            <div class="upload-box">
 
-                Project Features
+                <input
+                    type="file"
+                    name="image"
+                    id="image"
+                    accept="image/*"
+                    required>
 
-            </h2>
-
-        </div>
-
-        <div class="row">
-
-            <div class="col-md-4">
-
-                <div class="card feature-card shadow">
-
-                    <div class="card-body text-center">
-
-                        <h1>🤖</h1>
-
-                        <h4>AI Detection</h4>
-
-                        <p>
-
-                            Detect diseases using CNN Deep Learning Model.
-
-                        </p>
-
-                    </div>
-
-                </div>
+                <label for="image">
+                    📷 Click here to Upload Leaf Image
+                </label>
+                <p id="file-name" style="margin-top:15px;color:gray;"></p>
 
             </div>
 
-            <div class="col-md-4">
+            <button type="submit">
+                Predict Disease
+            </button>
 
-                <div class="card feature-card shadow">
-
-                    <div class="card-body text-center">
-
-                        <h1>⚡</h1>
-
-                        <h4>Fast Prediction</h4>
-
-                        <p>
-
-                            Get results in just a few seconds.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <div class="col-md-4">
-
-                <div class="card feature-card shadow">
-
-                    <div class="card-body text-center">
-
-                        <h1>📄</h1>
-
-                        <h4>PDF Report</h4>
-
-                        <p>
-
-                            Download prediction report instantly.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
+        </form>
 
     </div>
 
-</section>
+    <footer>
 
-<!-- About -->
+        <p>
+            © 2026 AI Crop Disease Prediction | Developed using Python, Flask & PyTorch
+        </p>
 
-<section class="mt-5 mb-5">
+    </footer>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
-    <div class="container">
+</body>
 
-        <div class="card shadow">
-
-            <div class="card-body">
-
-                <h2>
-
-                    About Project
-
-                </h2>
-
-                <p>
-
-                    This AI-powered system helps farmers detect crop diseases
-                    from leaf images using Deep Learning and Computer Vision.
-                    It also provides treatment suggestions and confidence score.
-
-                </p>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-{% endblock %}
+</html>

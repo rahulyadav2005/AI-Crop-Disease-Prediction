@@ -3,9 +3,7 @@ from torchvision import datasets, transforms
 from torch.utils.data import DataLoader
 
 
-# ==========================
-# Settings
-# ==========================
+# setting
 
 from pathlib import Path
 
@@ -17,9 +15,7 @@ IMAGE_SIZE = 224
 BATCH_SIZE = 32
 
 
-# ==========================
-# Image Transformation
-# ==========================
+#image transformation
 
 transform = transforms.Compose([
 
@@ -38,9 +34,7 @@ transform = transforms.Compose([
 ])
 
 
-# ==========================
-# Load Dataset
-# ==========================
+#data loading
 
 dataset = datasets.ImageFolder(
 
@@ -51,9 +45,7 @@ dataset = datasets.ImageFolder(
 )
 
 
-# ==========================
-# Class Names
-# ==========================
+
 
 class_names = dataset.classes
 
@@ -64,9 +56,7 @@ for name in class_names:
     print(name)
 
 
-# ==========================
-# Data Loader
-# ==========================
+
 
 data_loader = DataLoader(
 

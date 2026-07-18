@@ -9,38 +9,28 @@ from torchvision import datasets, transforms
 
 from cnn_model import CropDiseaseModel
 
-# ==========================
-# SETTINGS
-# ==========================
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATASET_PATH = BASE_DIR / "dataset" / "train"
 MODEL_DIR = BASE_DIR / "model"
 
 IMAGE_SIZE = 224
-BATCH_SIZE = 8
-EPOCHS = 10
+BATCH_SIZE = 16
+EPOCHS = 1
 LEARNING_RATE = 0.001
 
-# ==========================
-# DEVICE
-# ==========================
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using Device: {device}")
 
-# ==========================
-# TRANSFORMS
-# ==========================
+
 
 transform = transforms.Compose([
     transforms.Resize((IMAGE_SIZE, IMAGE_SIZE)),
     transforms.ToTensor(),
 ])
-
-# ==========================
-# LOAD DATASET
-# ==========================
+#dataset loading
 
 dataset = datasets.ImageFolder(DATASET_PATH, transform=transform)
 
@@ -72,9 +62,7 @@ val_loader = DataLoader(
     num_workers=0
 )
 
-# ==========================
-# MODEL
-# ==========================
+
 
 model = CropDiseaseModel(num_classes).to(device)
 
@@ -91,9 +79,6 @@ best_weights = copy.deepcopy(model.state_dict())
 train_acc_history = []
 val_acc_history = []
 
-# ==========================
-# TRAINING
-# ==========================
 
 for epoch in range(EPOCHS):
 
@@ -132,9 +117,7 @@ for epoch in range(EPOCHS):
 
     train_acc = 100 * correct / total
 
-    # ======================
-    # VALIDATION
-    # ======================
+  #validation
 
     model.eval()
 
@@ -167,9 +150,6 @@ for epoch in range(EPOCHS):
         best_acc = val_acc
         best_weights = copy.deepcopy(model.state_dict())
 
-# ==========================
-# SAVE MODEL
-# ==========================
 
 MODEL_DIR.mkdir(exist_ok=True)
 
@@ -182,9 +162,7 @@ torch.save(
 
 print("\nModel Saved Successfully!")
 
-# ==========================
-# GRAPH
-# ==========================
+#graph
 
 plt.figure(figsize=(8,5))
 

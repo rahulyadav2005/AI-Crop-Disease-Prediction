@@ -9,6 +9,7 @@
     <title>AI Crop Disease Prediction</title>
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    
 
 </head>
 
@@ -23,6 +24,9 @@
     </header>
 
     <div class="container">
+        <div class="hero-image">
+    <img src="{{ url_for('static', filename='Images/hero.jpg') }}" alt="Farmer Banner">
+</div>
 
         <form action="/predict" method="POST" enctype="multipart/form-data">
 
@@ -53,7 +57,7 @@
     <footer>
 
         <p>
-            © 2026 AI Crop Disease Prediction | Developed using Python, Flask & PyTorch
+             project of ======IBM iternship===== AI Crop Disease Prediction | Rahul Yadav batch 10  cell no 22 
         </p>
 
     </footer>
